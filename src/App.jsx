@@ -31,13 +31,19 @@ function App() {
   }
   useEffect(actorsFunction, [])
 
+  const [changeList, setChangeList]=useState(false)
   return (
     <>
       <div className="section">
         <div className="container">
+          <div className='d-flex justify-content-around'>
+            <button onClick={()=>setChangeList(true)}>Actress List</button>
+            <button onClick={()=>setChangeList(false)}>Actor List</button>
+          </div>
+          
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
             {
-              renderActress.map((actress,key) => (
+              renderActress.map(actress => (
                 <div key={actress.id} className="col p-2">
                   <div id='card_female' className="card">
                     <img src={actress.image} alt="" />
@@ -54,7 +60,7 @@ function App() {
                ))
             }
              {
-              renderActor.map((actor,key) => (
+              renderActor.map((actor) => (
                 <div key={actor.id} className="col p-2">
                   <div id='card_male' className="card">
                     <img src={actor.image} alt="" />

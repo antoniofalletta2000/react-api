@@ -13,3 +13,13 @@
 #card_male{
   background-color: rgb(126, 79, 255);
 }
+
+img{
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-body{
+  min-height: 250px;
+}
