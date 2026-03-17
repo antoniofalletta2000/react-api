@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import ActressComponent from './components/ActressComponent'
+import ActorComponent from './components/ActorComponent'
 
 const actress_api = "https://lanciweb.github.io/demo/api/actresses/"
 const actors_api = "https://lanciweb.github.io/demo/api/actors/"
@@ -30,51 +32,27 @@ function App() {
       })
   }
   useEffect(actorsFunction, [])
-
-  const [changeList, setChangeList]=useState(false)
   return (
     <>
-      <div className="section">
+      <div className="section actress">
         <div className="container">
-          <div className='d-flex justify-content-around'>
-            <button onClick={()=>setChangeList(true)}>Actress List</button>
-            <button onClick={()=>setChangeList(false)}>Actor List</button>
-          </div>
-          
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-            {
-              renderActress.map(actress => (
-                <div key={actress.id} className="col p-2">
-                  <div id='card_female' className="card">
-                    <img src={actress.image} alt="" />
-                    <div className="card-body">
-                      <h4>{actress.name}</h4>
-                      <div><span>Birth Year: {actress.birth_year}</span></div>
-                      <div><span>Nationality: {actress.nationality}</span></div>
-                      <div><span>Biography: {actress.biography}</span></div>
-                      <div><span>Awards: {actress.awards}</span></div>
-                    </div>
-                  </div>
-                </div>
-                
-               ))
-            }
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
              {
+              renderActress.map((actress) => (
+                <ActressComponent key={actress.id} props={actress}/>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div className="section actors">
+        <div className="container">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            {
               renderActor.map((actor) => (
-                <div key={actor.id} className="col p-2">
-                  <div id='card_male' className="card">
-                    <img src={actor.image} alt="" />
-                    <div className="card-body">
-                      <h4>{actor.name}</h4>
-                      <div><span>Birth Year: {actor.birth_year}</span></div>
-                      <div><span>Nationality: {actor.nationality}</span></div>
-                      <div><span>Biography: {actor.biography}</span></div>
-                      <div><span>Awards: {actor.awards}</span></div>
-                    </div>
-                  </div>
-                </div>
-                
-               ))
+                <ActorComponent key={actor.id} props={actor}/>
+              ))
             }
           </div>
         </div>
@@ -85,3 +63,6 @@ function App() {
 }
 
 export default App
+
+
+  

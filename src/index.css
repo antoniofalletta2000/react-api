@@ -6,20 +6,26 @@
 }
 
 #card_female{
-  background-color: pink;
+  background-color: rgb(220, 143, 156);
 }
 
 
 #card_male{
-  background-color: rgb(126, 79, 255);
+  background-color: rgb(99, 62, 202);
 }
 
 img{
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: top;
+  width: 100%;
+  
 }
 
 .card-body{
-  min-height: 250px;
+  min-height: 40rem;
+}
+
+.card{
+  max-width: 300px;
 }
