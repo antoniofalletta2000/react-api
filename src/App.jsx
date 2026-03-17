@@ -36,7 +36,7 @@ function App() {
     <>
       <div className="section actress">
         <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
              {
               renderActress.map((actress) => (
                 <ActressComponent key={actress.id} props={actress}/>
@@ -48,7 +48,7 @@ function App() {
 
       <div className="section actors">
         <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
             {
               renderActor.map((actor) => (
                 <ActorComponent key={actor.id} props={actor}/>
